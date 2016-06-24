@@ -18,7 +18,7 @@ namespace DotNetLicensing
     {
         private string privateKey;
         private string publicKey;
-        private string testFolder = @"c:\temp\";
+        private string testFolder = @"C:\Users\Sarge\Documents\licensingKeyTests";
         public LicenseManagerForm()
         {
             InitializeComponent();

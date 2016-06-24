@@ -16,14 +16,14 @@ namespace DotNetLicensing
             
 
             RSA key = RSA.Create();
-            key.FromXmlString(publicKey);
+            key.FromXmlString(publicKey); //Instanciate the public key from the XML public key made from the pair. This is what should be embedded in the program. 
 
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(licenseContent);
-            SignedXml sxml = new SignedXml(doc);
+            SignedXml sxml = new SignedXml(doc); //Includes the signature
             try
             {
-                // Find signature node
+                // Find signature node from the license to be verified. 
                 XmlNode sig = doc.GetElementsByTagName("Signature")[0];
                 sxml.LoadXml((XmlElement)sig);
             }
