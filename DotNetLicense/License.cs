@@ -32,7 +32,15 @@ namespace DotNetLicense
         {
             _licenseAttributes = new Dictionary<string, string>();
             XmlDocument xDoc = new XmlDocument();
-            xDoc.LoadXml(licenseContent);
+            try
+            { 
+                xDoc.LoadXml(licenseContent);
+            }
+            catch (XmlException xmlEx)
+            {
+                throw new LicenseVerificationException("This license is not valid XML - it may be malformed! See inner exception for details.", xmlEx);
+            }
+
             InitializeFromXmlFile(xDoc);
         }
         #endregion

@@ -1,0 +1,18 @@
+<license>
+  <LicenseAttribute Name="Company">Test Co.</LicenseAttribute>
+  <LicenseAttribute Name="LicensedOn">6/24/2017</LicenseAttribute>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <DigestValue>OBGRr7obZIJpBSfVfh7ZP6g924A=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>UHWTCYfLHNe3VE1c0DNt2YPezwLBS+zqkI85L5BGXZs+jFoW+tSU6aLCZA11FgoLAVQogQxi9+0wXDNmli7OWm6LYL1LRijbwiEL6ci4w3z0MtDUHT/dzOgbFDEtbe/3am/zDWTJCbh/nEn2VNJp9bkUKgT6JYyKqvNtfiQYgj0E7S5I5YU+Zllj/4Mmm/62TgjyIB5xCAA3ZTHZt9XRm18sORlmmalni0VWnidHjIhFU0eKddAZrkvbv29cebhJug13Derkfz8C5u38gpj9Jt7i5W5py/kuMDJ1N2tmF75z+8JM6SOU0td5cfC7AfAzTXVzjWgkYV79tskev9huSQ==</SignatureValue>
+  </Signature>
+</license>

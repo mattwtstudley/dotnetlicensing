@@ -20,7 +20,12 @@ namespace DotNetLicense
             }
         }
 
-        public LicenseVerificationException(string message)
+        public LicenseVerificationException(string message) : base(message)
+        {
+            _message = message;
+        }
+
+        public LicenseVerificationException(string message, Exception innerException) : base(message,innerException)
         {
             _message = message;
         }

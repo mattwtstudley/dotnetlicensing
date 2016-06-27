@@ -57,7 +57,7 @@ namespace DotNetLicense.UnitTests
             LicenseManager manager = new LicenseManager();
             manager.LoadPrivateKeyFromString(TestKeys.PrivateKey);
             string expectedFilePath = string.Format("{0}\\testLicense.lic", _classTestDirName);
-            manager.SignAndSaveNewLicense(TestLicenses.GetTestUnsignedLicense(), expectedFilePath);
+            manager.SignAndSaveNewLicense(TestLicenses.GetTestNewUnsignedLicense(), expectedFilePath);
 
             Assert.IsTrue(File.Exists(expectedFilePath));
         }
@@ -71,6 +71,57 @@ namespace DotNetLicense.UnitTests
 
             Assert.IsNotNull(testLicense);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(LicenseVerificationException))]
+        public void LoadUnSignedLicense()
+        {
+            LicenseManager manager = new LicenseManager();
+            manager.LoadPublicKeyFromString(TestKeys.PublicKey);
+            License testLicense = manager.LoadLicenseFromString(TestLicenses.GetTestUnsignedLicenseString());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(LicenseVerificationException))]
+        public void LoadAlteredLicense()
+        {
+            LicenseManager manager = new LicenseManager();
+            manager.LoadPublicKeyFromString(TestKeys.PublicKey);
+            License testLicense = manager.LoadLicenseFromString(TestLicenses.GetTestAlteredLicenseString());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(LicenseVerificationException))]
+        public void LoadInvalidLicense()
+        {
+            LicenseManager manager = new LicenseManager();
+            manager.LoadPublicKeyFromString(TestKeys.PublicKey);
+            License testLicense = manager.LoadLicenseFromString(TestLicenses.GetTestInvalidLicenseString());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(LicenseVerificationException))]
+        public void LoadNonXml()
+        {
+            LicenseManager manager = new LicenseManager();
+            manager.LoadPublicKeyFromString(TestKeys.PublicKey);
+            License testLicense = manager.LoadLicenseFromString(TestLicenses.GetNonXml());
+        }
+
+        [TestMethod]
+        public void ReadLicenseAttributes()
+        {
+            LicenseManager manager = new LicenseManager();
+            manager.LoadPublicKeyFromString(TestKeys.PublicKey);
+            License testLicense = manager.LoadLicenseFromString(TestLicenses.GetTestSignedLicenseString());
+
+            string company = testLicense.GetAttribute("Company");
+            string licensedOn = testLicense.GetAttribute("LicensedOn");
+
+            Assert.AreEqual("Test Co.", company);
+            Assert.AreEqual("6/24/2016", licensedOn);
+        }
+
 
     }
 }

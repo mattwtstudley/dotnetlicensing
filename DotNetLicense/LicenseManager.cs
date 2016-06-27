@@ -159,7 +159,7 @@ namespace DotNetLicense
                                                                                         Set the public key property before calling this method.");
             License loadedLicense = new License(licenseString);
 
-            if (!loadedLicense.IsValid(PublicKey)) throw new LicenseVerificationException(string.Format("The license file at {0} is not valid!"));
+            if (!loadedLicense.IsValid(PublicKey)) throw new LicenseVerificationException(string.Format("The license file at {0} is not valid!",licenseString));
 
             return loadedLicense;
         }

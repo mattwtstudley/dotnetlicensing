@@ -62,6 +62,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="testAlteredLicense.lic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="testInvalidLicense.lic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="testUnsignedLicense.lic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="testSignedLicense.lic">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
