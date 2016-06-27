@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetLicensing", "DotNetLicensing\DotNetLicensing.csproj", "{54296A98-C86D-4E0A-9A52-9B8DBD3E1567}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetLicense", "DotNetLicense\DotNetLicense.csproj", "{18BA972C-45F0-476A-907D-EA7B549D478E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetLicense.UnitTests", "DotNetLicense.UnitTests\DotNetLicense.UnitTests.csproj", "{76E04B06-8BC4-4197-82F9-56195482DE60}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{54296A98-C86D-4E0A-9A52-9B8DBD3E1567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54296A98-C86D-4E0A-9A52-9B8DBD3E1567}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54296A98-C86D-4E0A-9A52-9B8DBD3E1567}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54296A98-C86D-4E0A-9A52-9B8DBD3E1567}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18BA972C-45F0-476A-907D-EA7B549D478E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18BA972C-45F0-476A-907D-EA7B549D478E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18BA972C-45F0-476A-907D-EA7B549D478E}.Release|Any CPU.ActiveCfg = Release|Any CPU
