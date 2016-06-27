@@ -200,7 +200,7 @@ namespace DotNetLicense
                 XmlNode sig = this._xmlLicense.GetElementsByTagName("Signature")[0];
                 sxml.LoadXml((XmlElement)sig);
             }
-            catch (Exception ex)
+            catch
             {
                 // Not signed!
                 return false;

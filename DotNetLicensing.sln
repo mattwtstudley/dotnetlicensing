@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetLicense", "DotNetLice
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetLicense.UnitTests", "DotNetLicense.UnitTests\DotNetLicense.UnitTests.csproj", "{76E04B06-8BC4-4197-82F9-56195482DE60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetLicensing.Examples.Northwind", "DotNetLicensing.Examples.Northwind\DotNetLicensing.Examples.Northwind.csproj", "{E87F0870-146D-452F-9C24-8294C2A53001}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{76E04B06-8BC4-4197-82F9-56195482DE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76E04B06-8BC4-4197-82F9-56195482DE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76E04B06-8BC4-4197-82F9-56195482DE60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E87F0870-146D-452F-9C24-8294C2A53001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E87F0870-146D-452F-9C24-8294C2A53001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E87F0870-146D-452F-9C24-8294C2A53001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E87F0870-146D-452F-9C24-8294C2A53001}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
