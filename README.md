@@ -91,7 +91,7 @@ namespace DotNetLicensing.Examples.Northwind.Models
         }
     }
 }
-`
+```
 
 
 #####3. Create a new key pair for generating and verifying licenses. 
@@ -104,7 +104,7 @@ Generating a new key pair is done with the `LicenseManager` object:
     using DotNetLicense;
     var lm = new LicenseManager();
     lm.CreateKeyPairs("Path\\To\\Folder", "newKeyPair");
-`
+```
 
 
 This generates two .key files in the directory provided in the first argument. They will have the name given in the second argument, with _private.key
@@ -127,7 +127,7 @@ Using the _private_ key you made in step 3, you can then use your license class 
     lm.LoadPrivateKeyFromFile("Path\To\Private.Key");
 
     lm.SignAndSaveNewLicense(newLicense, "Path\For\New\License.lic");
-`
+```
 
 
 This generates a license that is signed with the RSA key pair. You can send this license to the end user or otherwise use your license. 
@@ -156,7 +156,7 @@ Use the license manager to load your public key, and then your license:
     {
         //Malformed xml, or someone change the file and the signature is failing. 
     }
-`
+```
 
 
 You should always handle the LicenseVerificationException if it is thrown, as that indicates the license was changed or
