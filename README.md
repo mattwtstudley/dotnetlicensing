@@ -16,6 +16,7 @@ the business logic.
 
 In the example below we have a sample license for the imaginary Northwind company. The license has three properties for ExpirationDate, NumberOfUsers, and LicensedTo:
 
+
 ```cs
 using System;
 using DotNetLicense;
@@ -90,7 +91,9 @@ namespace DotNetLicensing.Examples.Northwind.Models
         }
     }
 }
-```
+`
+
+
 #####3. Create a new key pair for generating and verifying licenses. 
 In order to create a new license, you need to generate an RSA key-pair, which consists of a Private key and a Public key.   
 - You use the private key to create a license and sign it. Keep this key secret, or anyone can make licenses. 
@@ -102,6 +105,7 @@ Generating a new key pair is done with the `LicenseManager` object:
     var lm = new LicenseManager();
     lm.CreateKeyPairs("Path\\To\\Folder", "newKeyPair");
 `
+
 
 This generates two .key files in the directory provided in the first argument. They will have the name given in the second argument, with _private.key
  and \_public.key appended to them. In the example above, you would get newKeyPair\_private.key and newKeyPair\_public.key. 
@@ -124,6 +128,7 @@ Using the _private_ key you made in step 3, you can then use your license class 
 
     lm.SignAndSaveNewLicense(newLicense, "Path\For\New\License.lic");
 `
+
 
 This generates a license that is signed with the RSA key pair. You can send this license to the end user or otherwise use your license. 
 
@@ -152,6 +157,7 @@ Use the license manager to load your public key, and then your license:
         //Malformed xml, or someone change the file and the signature is failing. 
     }
 `
+
 
 You should always handle the LicenseVerificationException if it is thrown, as that indicates the license was changed or
 the license was invalid (wrong file etc...)
