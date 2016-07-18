@@ -1,0 +1,95 @@
+﻿<Window x:Class="DotNetLicensing.Examples.Northwind.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DotNetLicensing.Examples.Northwind"
+        mc:Ignorable="d"
+        Title="DotNetLicense Example" Height="768" Width="1024"
+        DataContext="ViewModels.ManageLicenseVM"
+        
+        >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="64" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="28" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Private Key"/>
+        <TextBox Name="tbPrivateKey" Grid.Row="0" Grid.Column="1" Text="{Binding Path=PrivateKey, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}">
+        </TextBox>
+        <Button Name="btnLoadPrivateKey" Grid.Row="0" Grid.Column="2" Content="Load Private Key" Click="btnLoadPrivateKey_Click">
+        </Button>
+
+        <TextBox Name="tbPublicKey" Grid.Row="1" Grid.Column="1" Text="{Binding Path=PublicKey, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}">
+        </TextBox>
+        <Button Name="btnLoadPublicKey" Grid.Row="1" Grid.Column="2" Content="Load Public Key" Height="28" VerticalAlignment="Top" Click="btnLoadPublicKey_Click">
+        </Button>
+        <Label Grid.Row="1" Grid.Column="0" Content="Public Key"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="WrapWithOverflow">
+            If you need a key or need to generate a new key set, use the row below to generate a new key pair - remember which licenses were made with which keys!
+            You use the private key to sign new licenses. You use the public key to verify those licenses. You'll need to include the public key with the license,
+            or embed the public key in your program.
+        </TextBlock>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Key Name"/>
+        <TextBox Name="tbKeyName" Grid.Row="3" Grid.Column="1" Text="{Binding Path=KeyName, Mode=OneWayToSource,UpdateSourceTrigger=PropertyChanged}">
+        </TextBox>
+        <Button Name="btnGenerateKeys" Grid.Row="3" Grid.Column="2" Content="Generate Key Pair" Click="btnGenerateKeys_Click"></Button>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="License Details"/>
+        <Grid Grid.Row="4" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="26"/>
+                <RowDefinition Height="26"/>
+                <RowDefinition Height="26"/>
+                <RowDefinition Height="26"/>
+                <RowDefinition Height="26"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <WrapPanel Grid.Row="0" Grid.Column="1">
+                <Button Name="btnLoadLicense" Grid.Row="0" Grid.Column="1" Content="Load License" Width="100" Click="btnLoadLicense_Click" IsEnabled="{Binding Path=CanLoadLicense, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Name="btnCreateLicense" Grid.Row="0" Grid.Column="1" Content="Create New License" Width="120" IsEnabled="{Binding Path=CanCreateLicense, UpdateSourceTrigger=PropertyChanged}" Click="btnCreateLicense_Click"/>
+            </WrapPanel>
+            
+            <Label Grid.Row="1" Grid.Column="0" Content="Licensed To:"></Label>
+            <TextBox Name="tbLicensedTo" Grid.Row="1" Grid.Column="1" Text="{Binding Path=LicensedTo, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+            </TextBox>
+
+            <Label Grid.Row="2" Grid.Column="0" Content="Expires On:"></Label>
+            <DatePicker Name="dpExpirationDate"  Grid.Row="2" Grid.Column="1" SelectedDate="{Binding Path=ExpirationDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            
+            
+            <Label Grid.Row="3" Grid.Column="0" Content="Number Of Users:"></Label>
+            <TextBox Name="tbNumberOfUsers" Grid.Row="3" Grid.Column="1">
+                <TextBox.Text>
+                    <Binding Path="NumberOfUsers" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+
+            <Label Grid.Row="4" Grid.Column="0" Content="Expired:"></Label>
+            <Label Name="lblExpired" Grid.Row="4" Grid.Column="1" Content="{Binding Path=Expired, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                
+            </Label>
+
+        </Grid>
+        
+        
+    </Grid>
+</Window>
