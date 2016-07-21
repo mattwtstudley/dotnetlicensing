@@ -10,6 +10,9 @@ using System.Xml;
 
 namespace DotNetLicense
 {
+    /// <summary>
+    /// The license manager class is used to create and load keys for the creation and loading instances of <see cref="License"/>.
+    /// </summary>
     public class LicenseManager
     {
         /// <summary>
@@ -86,7 +89,8 @@ namespace DotNetLicense
         /// <summary>
         /// Uses the defined Public Key and saves the license to the given filepath.
         /// </summary>
-        /// <param name="license"></param>
+        /// <param name="license">An instance of a <see cref="License"/> to be saved to disk.</param>
+        /// <param name="filepath">The file path where the license will be saved.</param>
         public void SignAndSaveNewLicense(License license, string filepath)
         {
             var textToSave = this.SignAndSaveNewLicense(license);
@@ -151,7 +155,7 @@ namespace DotNetLicense
         /// <summary>
         /// Load a license from the given string.
         /// </summary>
-        /// <param name="license"></param>
+        /// <param name="licenseString">The string from which a license class is to be deserialized and instanciated into.</param>
         /// <returns></returns>
         public License LoadLicenseFromString(string licenseString)
         {

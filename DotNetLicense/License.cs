@@ -10,6 +10,9 @@ using System.Xml.Linq;
 
 namespace DotNetLicense
 {
+    /// <summary>
+    /// Represents an instance of a License. You use the <see cref="LicenseManager"/> to create and read these licenses. 
+    /// </summary>
     public class License
     {
         private Dictionary<string, string> _licenseAttributes;
@@ -17,17 +20,28 @@ namespace DotNetLicense
         private XmlDocument _xmlLicense;
 
         #region Constructor
+        /// <summary>
+        /// Creates a new license. Use this when creating a license from scratch. 
+        /// </summary>
         public License()
         {
             _licenseAttributes = new Dictionary<string, string>();
         }
 
+        /// <summary>
+        /// Creates a license class from an existing XmlDocument representing a signed xml license. It must have been created using this class. 
+        /// </summary>
+        /// <param name="licenseContent"></param>
         public License(XmlDocument licenseContent)
         {
             _licenseAttributes = new Dictionary<string, string>();
             InitializeFromXmlFile(licenseContent);
         }
 
+        /// <summary>
+        /// Creates a license class from an existing string representing a signed xml license. 
+        /// </summary>
+        /// <param name="licenseContent"></param>
         public License(string licenseContent)
         {
             _licenseAttributes = new Dictionary<string, string>();
