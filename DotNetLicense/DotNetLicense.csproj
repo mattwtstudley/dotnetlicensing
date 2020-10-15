@@ -6,8 +6,8 @@
     <Product>DotNetLicense</Product>
     <Copyright>Copyright © Microsoft 2016</Copyright>
     <OutputPath>bin\$(Configuration)\</OutputPath>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>1.0.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.2</Version>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
