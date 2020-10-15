@@ -46,9 +46,10 @@ namespace DotNetLicense
         {
             _licenseAttributes = new Dictionary<string, string>();
             XmlDocument xDoc = new XmlDocument();
+            
             try
             { 
-                xDoc.LoadXml(licenseContent);
+                xDoc.LoadXml(licenseContent); 
             }
             catch (XmlException xmlEx)
             {
@@ -249,7 +250,7 @@ namespace DotNetLicense
 
             try
             {
-                XmlElement signedElement = (XmlElement)licenseContent.SelectSingleNode("/license/Signature");
+                XmlElement signedElement = (XmlElement)licenseContent.SelectSingleNode("/license/*[local-name()='Signature']");
 
                 _signature = new SignedXml(signedElement);
             }

@@ -147,7 +147,7 @@ namespace DotNetLicense
 
             License loadedLicense = new License(rawText);
 
-            if (!loadedLicense.IsValid(PublicKey)) throw new LicenseVerificationException(string.Format("The license file at {0} is not valid!"));
+            if (!loadedLicense.IsValid(PublicKey)) throw new LicenseVerificationException(string.Format("The license file at {0} is not valid!", filepath));
 
             return loadedLicense;
         }
