@@ -4,7 +4,7 @@ DotNetLicense is a library that can be used to create and validate RSA signed xm
  It is based on the original code examples found at [http://www.dotnetlicensing.net](http://www.dotnetlicensing.net), but has a lot of additional work done to seperate the implementation of the license from
 the business logic. 
 
-## Quick Start this is another change! Hello there!
+## Making another big change, but I am going to push before you did!
 
 #####1. Include the library in your project:
 
